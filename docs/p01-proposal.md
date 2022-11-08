@@ -1,4 +1,4 @@
-# Title of your Project: Project Proposal
+# Title of your Project: Mass shooting data
 
 **TODO**: Edit this file. Your project proposal goes here.
 
