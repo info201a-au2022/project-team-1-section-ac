@@ -1,7 +1,7 @@
 ---
-title: "Your Project Title"
-author: "project team members"
-date: "1/22/2022"
+title: "Mass Shooting"
+author: "Siyuan Ji", "Sean Park", "Junhan Jiao"
+date: "11/14/2022"
 output: html_document
 ---
 
@@ -9,46 +9,38 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## What is this file for?
 
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
+### Chart for Year Injured
 ```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and 
-# then "source" an R file (data_access.R)
-source("../source/data_access.R")
-data_access_test()
+# Chart for Year Injured
+plot(year_table, main = "Chart for Year Injured", type = "l")
+```
+Looking into the “Chart for year injured” we can see throughout the year 2000 - 2008 there was only a small increase of about 100 total injuries. With a spike around 2009, the number of injuries jumped up to around 170 a year. Coming down all the way to close to zero by 2010. Seeing the visualization more clearly we can see that there was an insane spike around 2014 that shot up all the way to a near 1000 injuries, shooting back down to the later years. 
+
+
+
+### Pie chart of Gender
+```{r}
+pie(slices,labels = lbls, col=rainbow(length(lbls)),
+    main="Pie Chart of Gender")
+```
+As seen on the pie chart there were a total of 719 injuries in the gender column. 
+Males: 608 injuries 
+Females: 7
+males/females: 11
+unknown : 93
+
+### Box plot of Victum
+```{r}
+victim_graph <- ggplot(data = victim_table) +
+  geom_col(mapping = aes(x = victum_type, y = victum_number))
+victim_graph
 ```
 
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
-```
-
-> `r msg` Hope you have a good day!! 
-
-## ABOUT THIS FILE: 
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r cars}
-summary(cars)
+View(race_table)
+highest_inj <- max(race_table$num_injured)
+highest_injured_race <- filter(race_table, num_injured == highest_inj)$Race
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
