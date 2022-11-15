@@ -123,4 +123,46 @@ View(year_table)
 highest_year <- max(year_table$Total_injured_year)
 highest_injured_year <- filter(year_table, Total_injured_year == highest_year)$Year
 
-#
+#Target
+
+num_familymember <- sum (mass_shooting_table_final$Target == "Family",
+                         mass_shooting_table_final$Target == "Family/Neighbors",
+                         mass_shooting_table_final$Target == "Ex-Girlfriend",
+                         mass_shooting_table_final$Target == "Ex-Wife",
+                         mass_shooting_table_final$Target == "Ex-Girlfriend & Family",
+                         mass_shooting_table_final$Target == "Ex-Wife & Family",
+                         mass_shooting_table_final$Target == "Girlfriend",
+                         mass_shooting_table_final$Target == "partner's family",
+                         na.rm =TRUE)
+num_coworker <- sum (mass_shooting_table_final$Target == "coworkers",
+                     mass_shooting_table_final$Target == "Coworkers",
+                     mass_shooting_table_final$Target == "Coworker's Family",
+                     mass_shooting_table_final$Target ==  "Ex-Coworkers",
+                     na.rm =TRUE)
+num_school <- sum(mass_shooting_table_final$Target == "Students",
+                  mass_shooting_table_final$Target == "uninvited guests",
+                  mass_shooting_table_final$Target == "Students",
+                  mass_shooting_table_final$Target == "Students+Teachers",
+                  mass_shooting_table_final$Target == "school girls",
+                  na.rm = TRUE)
+
+num_social_workers <- sum(mass_shooting_table_final == "police",
+                          mass_shooting_table_final == "Trooper",
+                          mass_shooting_table_final == "drug dealer",
+                          mass_shooting_table_final == "Marines" ,
+                          mass_shooting_table_final == "rapper+random",
+                          mass_shooting_table_final == "TSA Officer",
+                          mass_shooting_table_final == "Congresswoman",
+                          mass_shooting_table_final == "Policeman+Council Member",
+                          mass_shooting_table_final == "basketball players",
+                          mass_shooting_table_final == "hunters" ,
+                          mass_shooting_table_final == "psychologist+psychiatrist",
+                          mass_shooting_table_final == "lawyers" ,
+                          mass_shooting_table_final == "monks",
+                          na.rm = TRUE)
+
+victim_table <- data.frame(victum_type = c("familymember", "coworker","school","social_workers"),
+                           victum_number = c(num_familymember, num_coworker, num_school, num_social_workers))
+
+highest_target <- max(victim_table$victum_number)
+highest_injured_target <- filter(victim_table, victum_number == highest_target)$victum_type
