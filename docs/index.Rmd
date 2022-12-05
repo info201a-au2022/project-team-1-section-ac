@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+---
+>>>>>>> b05168caea47718af261ddb64b37f689f5664d18
 title: "Mass Shooting"
 author: "Siyuan Ji", "Sean Park", "Junhan Jiao"
 date: "11/14/2022"
@@ -11,6 +15,7 @@ source("../docs/P2_second_chart.R")
 ```
 
 
+<<<<<<< HEAD
 #### Dynamic paragraph
 After checking all the data, we want to know which gender and race have the most injured and how many they have. So we find out that most races got injured, "White," and the total amount is 328. Also, the highest gender who got hurt is Male, and the total amount is 608. The highest number of injured is 1119, which happened in 2016. Moreover, we know that the most targeted wounded people are family members, and the amount of people is 130. We combine all the information we can easily use for the table and remove the na data. Also, we find different data from different sources and left_join data together.
 
@@ -50,3 +55,39 @@ Unknown: 21%
 victim_graph()
 ```
 
+=======
+### Chart for Year Injured
+```{r}
+# Chart for Year Injured
+plot(year_table, main = "Chart for Year Injured", type = "l")
+```
+Looking into the “Chart for year injured” we can see throughout the year 2000 - 2008 there was only a small increase of about 100 total injuries. With a spike around 2009, the number of injuries jumped up to around 170 a year. Coming down all the way to close to zero by 2010. Seeing the visualization more clearly we can see that there was an insane spike around 2014 that shot up all the way to a near 1000 injuries, shooting back down to the later years. 
+
+
+
+### Pie chart of Gender
+```{r}
+pie(slices,labels = lbls, col=rainbow(length(lbls)),
+    main="Pie Chart of Gender")
+```
+As seen on the pie chart there were a total of 719 injuries in the gender column. 
+Males: 608 injuries 
+Females: 7
+males/females: 11
+unknown : 93
+
+### Box plot of Victum
+```{r}
+victim_graph <- ggplot(data = victim_table) +
+  geom_col(mapping = aes(x = victum_type, y = victum_number))
+victim_graph
+```
+
+
+```{r cars}
+View(race_table)
+highest_inj <- max(race_table$num_injured)
+highest_injured_race <- filter(race_table, num_injured == highest_inj)$Race
+```
+
+>>>>>>> b05168caea47718af261ddb64b37f689f5664d18
