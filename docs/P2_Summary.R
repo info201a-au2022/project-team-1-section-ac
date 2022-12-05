@@ -1,5 +1,5 @@
 # Race
-
+source("../docs/P2_table.R")
 unique(mass_shooting_table_final$Race)
 num_race_white <- sum(mass_shooting_table_final$Race == "White",
                       mass_shooting_table_final$Race == "White American or European American",
@@ -30,7 +30,7 @@ race_table <- data.frame(Race = c("White", "Black", "Asian", "Native", "Unknown"
                          num_injured = c(num_race_white,num_race_balck,
                                          num_race_asian,num_race_native,num_race_unknown))
 
-View(race_table)
+
 highest_inj <- max(race_table$num_injured)
 highest_injured_race <- filter(race_table, num_injured == highest_inj)$Race
 
@@ -52,10 +52,6 @@ slices <- c(num_gender_male, num_gender_female, num_gender_female_male, num_gend
 gender_table <- data.frame(Gender = c("Male", "Female", "Male/Female", "Unknown"),
                            num_injured = c(num_gender_male, num_gender_female, 
                                            num_gender_female_male, num_gender_unknown))
-View(gender_table)
-# Pie Chart of Gender
-pie(slices,labels = lbls, col=rainbow(length(lbls)),
-    main="Pie Chart of Gender")
 
 highest_injured <- max(gender_table$num_injured)
 highest_injured_gender <- filter(gender_table, num_injured == highest_injured)$Gender
@@ -107,7 +103,7 @@ total_injured_2002 <- sum(in_2002, na.rm = TRUE)
 in_2001 <- mass_shooting_table_final[c(603:605), "Injured"]
 total_injured_2001 <- sum(in_2001, na.rm = TRUE)
 in_2000 <- mass_shooting_table_final[c(606:607), "Injured"]
-total_injured_2001 <- sum(in_2001, na.rm = TRUE)
+total_injured_2000 <- sum(in_2000, na.rm = TRUE)
 
 year_table <- data.frame(Year  = c("2017","2016","2015","2014","2013","2012","2011","2010","2009","2008","2007",
                                    "2006","2005","2004","2003","2002","2001","2000"),
@@ -118,7 +114,7 @@ year_table <- data.frame(Year  = c("2017","2016","2015","2014","2013","2012","20
                                                 total_injured_2005,total_injured_2004, total_injured_2003,
                                                 total_injured_2002,total_injured_2001, total_injured_2000))
 
-View(year_table)
+
 
 highest_year <- max(year_table$Total_injured_year)
 highest_injured_year <- filter(year_table, Total_injured_year == highest_year)$Year
