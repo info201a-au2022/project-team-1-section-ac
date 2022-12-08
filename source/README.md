@@ -1,18 +1,11 @@
-# The `/source` Directory
+# US Mass shooting
+#### Code Name: mass_shooting-1,
+#### Siyuan Ji: (siyuanji@uw.edu)
+#### Sean Park：(seanp25@uw.edu)
+#### Junhan Jiao: (junhaj@uw.edu)
+#### INFO-201: Technical Foundations of Informatics- The Information School - University of Washington
+#### Autumn 2022
 
-All of our project code is found in this directory.  We further organize our code into 
-these sub-directories (TODO: Update/Delete)
+|[US mass shooting project](https://info201-ac-group1.shinyapps.io/source/) | 
+Description:Our research is centralized on mass gun shootings related to gender, race, age, location and how those components have been impacted throughout the years. By analyzing the Mass-shooting data sets, we think we can come up with a general understanding of crime or gun-shooting rates across different places in the country. By looking through the component of why, how, and when these things happe
 
-|Source Directories | Brief Description|
-|---------------| -----------------|
-|[xxx](./xxx) | Description ... 
-|[xxx](./xxx) | Description ... 
-
-
-# DEVELOPER NOTE 1: About ... 
-* All source code for your projects should go in the `/source` directory
-* To organize your code, you might decide to create sub-directories
-* If you use sub-directories, plese briefly describe them in the table above
-* Please remember your audience (prospective employers, open source colleagues, TAs, Instructors). Therefore, 
-aim for clarity and conciseness.
-* When done, be sure to delete this NOTE sections (which are intended for you, of course, not your audience!)
