@@ -1,0 +1,14 @@
+name: source
+title: source
+username:
+account: info201-ac-group1
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7834905
+bundleId: 6607920
+url: https://info201-ac-group1.shinyapps.io/source/
+when: 1670461151.40728
+lastSyncTime: 1670461151.40742
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: README.md

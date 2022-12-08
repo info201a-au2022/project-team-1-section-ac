@@ -40,7 +40,7 @@ race_table <- data.frame(Race = c("White", "Black", "Asian", "Native", "Unknown"
                                          num_race_asian,num_race_native,num_race_unknown))
 
 
-View(race_table)
+
 # Pie Chart of Race
 pie_plot_race <- function() {
   slices <- c(144, 85, 18, 3, 66)
@@ -70,7 +70,7 @@ slices <- c(num_gender_male, num_gender_female, num_gender_female_male, num_gend
 gender_table <- data.frame(Gender = c("Male", "Female", "Male/Female", "Unknown"),
                            num_injured = c(num_gender_male, num_gender_female, 
                                            num_gender_female_male, num_gender_unknown))
-View(gender_table)
+
 # Pie Chart of Gender
 pie_plot_gender <- function() {
   slices <- c(292, 5, 5, 21)
